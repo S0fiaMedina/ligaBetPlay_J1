@@ -140,7 +140,8 @@ public class Liga {
                     nombreEquipo = equipo.getNombre();
                 }
             }
-            System.out.println("El equipo con más goles es" + nombreEquipo + "Con " + contadorGoles + " goles a favor"); 
+            System.out.println("-------- EQUIPO CON MAS GOLES ----------");
+            System.out.println("El equipo con más goles es" + nombreEquipo + " Con " + contadorGoles + " goles a favor"); 
         }
 
         /*---- EQUIPO CON MAS PUNTOS -----*/
@@ -155,7 +156,8 @@ public class Liga {
                     nombreEquipo = equipo.getNombre();
                 }
             }
-            System.out.println("El equipo con más goles es" + nombreEquipo + "Con " + contador + " puntos a favor"); 
+            System.out.println("-------- EQUIPO CON MAS PUNTOS ----------");
+            System.out.println("El equipo con más goles es" + nombreEquipo + " Con " + contador + " puntos a favor"); 
         }
 
         /*---- EQUIPO CON MAS PARTIDOS GANADOS -----*/
@@ -170,7 +172,8 @@ public class Liga {
                     nombreEquipo = equipo.getNombre();
                 }
             }
-            System.out.println("El equipo con más patidos ganados es" + nombreEquipo + "Con " + contador + " partidos ganados"); 
+            System.out.println("-------- EQUIPO CON MAS PARTIDOS GANADOS ----------");
+            System.out.println("El equipo con más patidos ganados es" + nombreEquipo + " con " + contador + " partidos ganados"); 
         }
 
 
@@ -195,7 +198,7 @@ public class Liga {
     /*--- PROMEDIO DE GOLES------*/
     public void promedioGoles(){
         int sumaGoles = this.sumaDeGoles();
-        double promedioGoles = sumaGoles / equipos.size();
+        double promedioGoles = (double) sumaGoles / equipos.size(); 
         System.out.println("El promedio de goles es " + promedioGoles);
     }
 
