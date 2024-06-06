@@ -11,6 +11,7 @@ public class Equipo {
 
     private String nombre;
     private ArrayList<Jugador> jugadores;
+    
     private int partidosJugados;
     private int partidosGanados;
     private int partidosPerdidos;
@@ -21,12 +22,10 @@ public class Equipo {
 
 
     //Constructor
-    public Equipo(String nombre){
+    private Equipo(){
         
         Equipo.contadorEquipos++; // actualiza id
         this.idEquipo = contadorEquipos;
-        
-        this.nombre = nombre; // pone el nombre
 
         // inicializa las variables en 0
         this.partidosJugados = 0;
@@ -37,6 +36,13 @@ public class Equipo {
         this.golesEnContra = 0;
         this.totalPuntos = 0;
         
+    }
+
+    // Constructor con agumentos
+    public Equipo(String nombre, ArrayList<Jugador> jugadores){
+        this();
+        this.jugadores = jugadores;
+        this.nombre = nombre;
     }
     
     // recibe los goles obtenidos, los goles en contra y los puntos ganados y aumenta partidos >:(
