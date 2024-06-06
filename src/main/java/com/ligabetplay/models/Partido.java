@@ -1,5 +1,4 @@
-package com.ligabetplay;
-
+package com.ligabetplay.models;
 
 public class Partido {
     
@@ -10,9 +9,7 @@ public class Partido {
     private Equipo equipo1;
     private Equipo equipo2;
     
-    private int dia;
-    private int mes;
-    private int anio;
+    private String fecha;
 
     private int golesEquipo1;
     private int golesEquipo2;
@@ -24,13 +21,11 @@ public class Partido {
     }
 
     // Constructor 
-    public Partido(Equipo equipo1, Equipo equipo2, int dia, int mes, int anio) {
+    public Partido(Equipo equipo1, Equipo equipo2, String fecha) {
         this();
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
-        this.dia = dia;
-        this.mes = mes;
-        this.anio = anio;
+        this.fecha = fecha;
     }
 
 
@@ -38,9 +33,8 @@ public class Partido {
 
     @Override
     public String toString() {
-        return "Partido [idPartido=" + idPartido + ", equipo1=" + equipo1 + ", equipo2=" + equipo2 + ", dia=" + dia
-                + ", mes=" + mes + ", anio=" + anio + ", golesEquipo1=" + golesEquipo1 + ", golesEquipo2="
-                + golesEquipo2 + "]";
+        return "Partido [idPartido=" + idPartido + ", equipo1=" + equipo1 + ", equipo2=" + equipo2 + ", fecha=" + fecha
+                + ", golesEquipo1=" + golesEquipo1 + ", golesEquipo2=" + golesEquipo2 + "]";
     }
 
     
@@ -50,7 +44,7 @@ public class Partido {
         return idPartido;
     }
 
-    
+
 
     public void setIdPartido(int idPartido) {
         this.idPartido = idPartido;
@@ -96,29 +90,16 @@ public class Partido {
         this.golesEquipo2 = golesEquipo2;
     }
 
-    public int getDia() {
-        return dia;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setDia(int dia) {
-        this.dia = dia;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
-    public int getMes() {
-        return mes;
-    }
+    
 
-    public void setMes(int mes) {
-        this.mes = mes;
-    }
-
-    public int getAnio() {
-        return anio;
-    }
-
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
 
     
 

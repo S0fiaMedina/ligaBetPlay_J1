@@ -1,6 +1,10 @@
 package com.ligabetplay;
 
 import java.util.Scanner;
+
+import com.ligabetplay.models.Equipo;
+import com.ligabetplay.models.Partido;
+
 import java.util.ArrayList;
 
 
@@ -128,53 +132,9 @@ public class Liga {
     
 
 
-        /*---- EQUIPO CON MAS GOLES ----*/
-        public void equipoConMasGoles(){
-            int contadorGoles =  0;
-            String nombreEquipo = "";
 
-            // busca el equipo con más goles
-            for (Equipo equipo: this.equipos){
-                if (equipo.getGolesAFavor() > contadorGoles ){
-                    contadorGoles = equipo.getGolesAFavor();
-                    nombreEquipo = equipo.getNombre();
-                }
-            }
-            System.out.println("-------- EQUIPO CON MAS GOLES ----------");
-            System.out.println("El equipo con más goles es" + nombreEquipo + " Con " + contadorGoles + " goles a favor"); 
-        }
 
-        /*---- EQUIPO CON MAS PUNTOS -----*/
-        public void equipoConMasPuntos(){
-            int contador =  0;
-            String nombreEquipo = "";
 
-            // busca el equipo con más goles
-            for (Equipo equipo: this.equipos){
-                if (equipo.getTotalPuntos() > contador ){
-                    contador = equipo.getTotalPuntos();
-                    nombreEquipo = equipo.getNombre();
-                }
-            }
-            System.out.println("-------- EQUIPO CON MAS PUNTOS ----------");
-            System.out.println("El equipo con más goles es" + nombreEquipo + " Con " + contador + " puntos a favor"); 
-        }
-
-        /*---- EQUIPO CON MAS PARTIDOS GANADOS -----*/
-        public void equiposConMasPartidosGanados(){
-            int contador =  0;
-            String nombreEquipo = "";
-
-            // busca el equipo con más goles
-            for (Equipo equipo: this.equipos){
-                if (equipo.getPartidosGanados() > contador ){
-                    contador = equipo.getPartidosGanados();
-                    nombreEquipo = equipo.getNombre();
-                }
-            }
-            System.out.println("-------- EQUIPO CON MAS PARTIDOS GANADOS ----------");
-            System.out.println("El equipo con más patidos ganados es" + nombreEquipo + " con " + contador + " partidos ganados"); 
-        }
 
 
 
@@ -186,21 +146,9 @@ public class Liga {
         }
     }
 
-    /*----- SUMA  DE GOLES ----*/
-    public int sumaDeGoles(){
-        int acumulador = 0;
-        for (Equipo equipo : equipos){
-            acumulador += equipo.getGolesAFavor();
-        }
-        return acumulador;
-    }
 
-    /*--- PROMEDIO DE GOLES------*/
-    public void promedioGoles(){
-        int sumaGoles = this.sumaDeGoles();
-        double promedioGoles = (double) sumaGoles / equipos.size(); 
-        System.out.println("El promedio de goles es " + promedioGoles);
-    }
+
+
 
     /*--- getter de equipos ------*/
     public ArrayList<Equipo> getEquipos() {

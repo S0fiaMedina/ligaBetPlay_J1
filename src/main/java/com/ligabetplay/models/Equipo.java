@@ -1,4 +1,5 @@
-package com.ligabetplay;
+package com.ligabetplay.models;
+import java.util.ArrayList;
 
 public class Equipo {
     
@@ -6,11 +7,10 @@ public class Equipo {
     // Atributos
     private static int contadorEquipos;
 
-
     private  int idEquipo;
 
-
     private String nombre;
+    private ArrayList<Jugador> jugadores;
     private int partidosJugados;
     private int partidosGanados;
     private int partidosPerdidos;
@@ -92,6 +92,9 @@ public class Equipo {
     public int getTotalPuntos() {
         return totalPuntos;
     }
+    public ArrayList<Jugador> getJugadores(){
+        return this.jugadores;
+    }
 
     // SETTERS
 
@@ -114,7 +117,7 @@ public class Equipo {
     //toString
     @Override
     public String toString() {
-        return "Equipo [idEquipo=" + idEquipo + ", nombre=" + nombre + ", partidosJugados=" + partidosJugados
+        return "Equipo [ idEquipo= " + idEquipo + ", nombre= " + nombre + ", partidosJugados= " + partidosJugados
                 + ", partidosGanados=" + partidosGanados + ", partidosPerdidos=" + partidosPerdidos
                 + ", partidosEmpatados=" + partidosEmpatados + ", golesAFavor=" + golesAFavor + ", golesEnContra="
                 + golesEnContra + ", totalPuntos=" + totalPuntos + "]";
