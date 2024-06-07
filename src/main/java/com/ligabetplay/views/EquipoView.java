@@ -14,10 +14,10 @@ public class EquipoView {
 
 
     // Muestra la seleccion de equipos, y tras de que el usuario escoja, retorna el nombre del equipo escogido
-    public String getEquipoDeLista(){
+    public Equipo  getEquipoDeLista(){
         this.mostrarListaDeEquipos();
         int op = Utileria.validarRango(1, equipos.size()); 
-        return equipos.get(op -1).getNombre(); // retorna el noombre del equipo escogido
+        return equipos.get(op -1); // retorna el noombre del equipo escogido
     }
     
     public void mostrarListaDeEquipos(){

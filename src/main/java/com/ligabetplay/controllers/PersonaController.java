@@ -3,8 +3,9 @@ import com.ligabetplay.models.Jugador;
 import com.ligabetplay.models.Persona;
 import com.ligabetplay.models.Tecnico;
 import com.ligabetplay.models.Medico;
-import com.ligabetplay.views.PersonaView;
+import com.ligabetplay.models.Equipo;
 import com.ligabetplay.views.EquipoView;
+import com.ligabetplay.views.PersonaView;
 
 import java.util.ArrayList;
 
@@ -22,7 +23,7 @@ public class PersonaController {
     public void registroPersona(){
         String nombre = personaView.getInputNombre();
         String nacionalidad = personaView.getInputNacionalidad();
-        String equipo = equipoView.getEquipoDeLista();
+        Equipo equipo = equipoView.getEquipoDeLista();
         String rol = personaView.eleccionRolesEquipo();
 
         //Asignacion de roles
@@ -38,6 +39,7 @@ public class PersonaController {
             
         } else{
             Jugador jugador = new Jugador(nombre, nacionalidad, 0, equipo);
+            jugadores.add(jugador);
         }
     }
 

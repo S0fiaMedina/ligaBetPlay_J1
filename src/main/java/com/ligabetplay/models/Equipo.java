@@ -47,12 +47,7 @@ public class Equipo {
     }
     
     // recibe los goles obtenidos, los goles en contra y los puntos ganados y aumenta partidos >:(
-    public  void jugarPartido(int golesAnotados, int golesRecibidos, int puntosObtenidos){
-        this.partidosJugados++;
-        this.totalPuntos += puntosObtenidos;
-        this.golesAFavor += golesAnotados;
-        this.golesEnContra += golesRecibidos;
-    }
+    
 
     // GETTERS
 
@@ -107,6 +102,20 @@ public class Equipo {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    
+
+    public void setGolesAFavor(int golesAFavor) {
+        this.golesAFavor = golesAFavor;
+    }
+
+    public void setGolesEnContra(int golesEnContra) {
+        this.golesEnContra = golesEnContra;
+    }
+
+    public void setTotalPuntos(int totalPuntos) {
+        this.totalPuntos = totalPuntos;
     }
 
     public void setPartidosJugados(int partidosJugados) {

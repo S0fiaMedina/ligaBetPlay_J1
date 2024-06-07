@@ -5,8 +5,6 @@ import java.lang.Math;
 import com.ligabetplay.models.Equipo;
 
 public class EquipoController {
-
-
     // atributos
     private ArrayList<Equipo> equipos;
 
@@ -14,6 +12,33 @@ public class EquipoController {
     public ArrayList<Equipo> getEquipos(){
         return this.equipos;
     }   
+
+    /*---- FUNCION DE CUANDO EL QUIPO JUEGA**/
+    public void equipoJuega(Equipo equipo, int puntosObtenidos, int golesAnotados, int golesRecibidos){
+        equipo.setPartidosJugados(equipo.getPartidosJugados() + 1);//partidosJugados++; 
+        equipo.setTotalPuntos(equipo.getTotalPuntos() + puntosObtenidos);//totalPuntos += puntosObtenidos;
+        equipo.setGolesAFavor(equipo.getGolesAFavor() + golesAnotados);//golesAFavor += golesAnotados;
+        equipo.setGolesEnContra(equipo.getGolesEnContra() + golesRecibidos); 
+    }
+
+    /*EquipoGana */
+    public void equipoGana(Equipo equipo, int golesAnotados, int golesRecibidos){
+        equipo.setPartidosGanados(equipo.getPartidosGanados() + 1);
+        this.equipoJuega(equipo, 3, golesAnotados, golesRecibidos);
+    }
+
+
+    /*Equipo pierde*/
+    public void equipoPierde(Equipo equipo, int golesAnotados, int golesRecibidos){
+        equipo.setPartidosPerdidos(equipo.getPartidosPerdidos() + 1);
+        this.equipoJuega(equipo, 0, golesAnotados, golesRecibidos);
+    }
+
+    /*E*Equipo cuando empata*/
+    public void equipoEmpata(Equipo equipo, int golesAnotados, int golesRecibidos){
+        equipo.setPartidosEmpatados(equipo.getPartidosEmpatados() + 1);
+        this.equipoJuega(equipo, 1, golesAnotados, golesRecibidos);
+    }
 
     /*----- AÑADIR EQUIPO ----*/
     public void nuevoEquipo(String nombre){

@@ -6,6 +6,24 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class Utileria {
+    
+
+    // recrea el input de python de string
+    @SuppressWarnings("resource")
+    public static String getStringInput(String mensaje){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(mensaje);
+        return scanner.nextLine();
+    }
+
+    //recrea el input de int
+    @SuppressWarnings("resource")
+    public static int getIntInput(String mensaje){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(mensaje);
+        return scanner.nextInt();
+    }
+    // imprime una lista
     public static void imprimirOpciones(String[] opciones){
         for( int i = 0; i < opciones.length; i++){
             System.out.println((i+1) + " " + opciones[i]);
@@ -53,6 +71,7 @@ public class Utileria {
     }
 
     //verificar fecha
+    @SuppressWarnings("resource")
     public static String validarFecha(String fecha){
         Scanner scanner = new Scanner(System.in);
         String regexp = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{2}$";

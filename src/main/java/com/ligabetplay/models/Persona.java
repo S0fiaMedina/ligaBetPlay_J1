@@ -4,14 +4,14 @@ public class Persona {
     private String nombre;
     private String nacionalidad;
     private String rol;
-    private String equipo;
+    private Equipo equipo;
     
     
     public Persona(){
 
     }
 
-    public Persona(String nombre, String nacionalidad, String rol, String equipo){
+    public Persona(String nombre, String nacionalidad, String rol, Equipo equipo){
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
         this.rol = rol;
@@ -50,12 +50,12 @@ public class Persona {
         this.rol = rol;
     }
 
-    public String getEquipo() {
+    public Equipo getEquipo() {
         return equipo;
     }
 
 
-    public void setEquipo(String equipo) {
+    public void setEquipo(Equipo equipo) {
         this.equipo = equipo;
     }
 

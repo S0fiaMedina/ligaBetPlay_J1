@@ -1,5 +1,7 @@
 package com.ligabetplay.models;
 
+import java.util.ArrayList;
+
 public class Partido {
     
     private static int contadorPartidos;
@@ -14,17 +16,21 @@ public class Partido {
     private int golesEquipo1;
     private int golesEquipo2;
 
+    private ArrayList<Jugador> personasQueHicieronGoles;
+
     // Constructor vacio
-    public Partido(){
+    private Partido(){
         Partido.contadorPartidos++;
         this.idPartido = contadorPartidos;
     }
 
     // Constructor 
-    public Partido(Equipo equipo1, Equipo equipo2, String fecha) {
+    public Partido(Equipo equipo1, int golesEquipo1,  Equipo equipo2, int golesEquipo2,  String fecha) {
         this();
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
+        this.golesEquipo1 = golesEquipo1;
+        this.golesEquipo2 = golesEquipo2;
         this.fecha = fecha;
     }
 
@@ -43,8 +49,13 @@ public class Partido {
     public int getIdPartido() {
         return idPartido;
     }
+    public ArrayList<Jugador> getPersonasQueHicieronGoles() {
+        return personasQueHicieronGoles;
+    }
 
-
+    public void setPersonasQueHicieronGoles(ArrayList<Jugador> personasQueHicieronGoles) {
+        this.personasQueHicieronGoles = personasQueHicieronGoles;
+    }
 
     public void setIdPartido(int idPartido) {
         this.idPartido = idPartido;

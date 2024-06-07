@@ -10,7 +10,7 @@ public class Jugador  extends Persona{
     private int tarjetasAmarillas;
 
     // Constructor
-    public Jugador(String nombre, String nacionalidad, int dorsal, String equipo){
+    public Jugador(String nombre, String nacionalidad, int dorsal, Equipo equipo){
         super(nombre, nacionalidad, "Jugador",equipo );
         Jugador.contadorJugadores++;
         this.jugadorId = Jugador.contadorJugadores;
