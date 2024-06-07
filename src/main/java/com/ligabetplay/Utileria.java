@@ -2,8 +2,15 @@ package com.ligabetplay;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class Utileria {
+    public static void imprimirOpciones(String[] opciones){
+        for( int i = 0; i < opciones.length; i++){
+            System.out.println((i+1) + " " + opciones[i]);
+        }
+    }
 
     // validar que la entrada del usuario sea un numero y este dentro de ciertos
     // rangos
@@ -43,5 +50,23 @@ public class Utileria {
             }
         } while (true);
 
+    }
+
+    //verificar fecha
+    public static String validarFecha(String fecha){
+        Scanner scanner = new Scanner(System.in);
+        String regexp = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{2}$";
+        while (true){
+            Pattern patron  = Pattern.compile(regexp); // compilacion en un patron
+            Matcher matcher = patron.matcher(fecha); // crea el matcher
+            boolean isMatching = matcher.matches(); // compara el string y el regexp
+            if (isMatching == true){
+                break;
+            } else{
+                System.out.println("Formato incorrecto, o fuera de rango. Intente otra vez");
+                fecha = scanner.nextLine();
+            }
+        }
+        return fecha;
     }
 }

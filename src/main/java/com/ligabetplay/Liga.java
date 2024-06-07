@@ -69,17 +69,7 @@ public class Liga {
         
 
         //Agregar fechas
-        System.out.println(">>\tIngrese el dia del partido: ");
-        int dia = Utileria.validarRango(1, 30); // Obtiene el dia 
-        partida.setDia(dia);
-
-        System.out.println(">>\tIngrese el mes del partido");
-        int mes = Utileria.validarRango(1, 12); // Obtiene el mes 
-        partida.setDia(mes);
-
-        System.out.println(">>\tIngrese el año del partido: ");
-        int anio = Utileria.validarRango(2024, 2025); // Obtiene el año 
-        partida.setAnio(anio);
+       
 
         // pedir equipo de local
         System.out.println(">> Seleccione el equipo que jugo de local: ");

@@ -11,6 +11,8 @@ public class Equipo {
 
     private String nombre;
     private ArrayList<Jugador> jugadores;
+    private ArrayList<Persona> cuerpoTecnico;
+    private ArrayList<Persona> cuerpoMedico;
     
     private int partidosJugados;
     private int partidosGanados;
@@ -39,9 +41,8 @@ public class Equipo {
     }
 
     // Constructor con agumentos
-    public Equipo(String nombre, ArrayList<Jugador> jugadores){
+    public Equipo(String nombre){
         this();
-        this.jugadores = jugadores;
         this.nombre = nombre;
     }
     

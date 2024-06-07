@@ -10,6 +10,17 @@ public class EquipoController {
     // atributos
     private ArrayList<Equipo> equipos;
 
+    //get de equipos
+    public ArrayList<Equipo> getEquipos(){
+        return this.equipos;
+    }   
+
+    /*----- AÑADIR EQUIPO ----*/
+    public void nuevoEquipo(String nombre){
+        Equipo equipo = new Equipo(nombre);
+        equipos.add(equipo);
+    }
+
     
     
     /*---- EQUIPO CON MAS GOLES ----*/

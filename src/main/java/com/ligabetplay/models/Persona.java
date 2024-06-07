@@ -5,9 +5,13 @@ public class Persona {
     private String nacionalidad;
     private String rol;
     private String equipo;
+    
+    
+    public Persona(){
 
+    }
 
-    public Persona(String nombre, String nacionalidad, String rol, String cuerpoAlQuePertenece, String equipo){
+    public Persona(String nombre, String nacionalidad, String rol, String equipo){
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
         this.rol = rol;
@@ -46,17 +50,6 @@ public class Persona {
         this.rol = rol;
     }
 
-
-    public String getCuerpoAlQuePertenece() {
-        return cuerpoAlQuePertenece;
-    }
-
-
-    public void setCuerpoAlQuePertenece(String cuerpoAlQuePertenece) {
-        this.cuerpoAlQuePertenece = cuerpoAlQuePertenece;
-    }
-
-
     public String getEquipo() {
         return equipo;
     }
@@ -69,7 +62,11 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Person [nombre=" + nombre + ", nacionalidad=" + nacionalidad + "]";
+        return "Persona [nombre=" + nombre + ", nacionalidad=" + nacionalidad + ", rol=" + rol + ", equipo=" + equipo
+                + "]";
     }
-
 }
+
+
+
+
