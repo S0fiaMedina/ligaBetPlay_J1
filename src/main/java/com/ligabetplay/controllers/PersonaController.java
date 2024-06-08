@@ -11,13 +11,14 @@ import java.util.ArrayList;
 
 
 public class PersonaController {
-
-    PersonaView personaView = new PersonaView();
-    EquipoView equipoView = new EquipoView();
+    private PersonaView personaView = new PersonaView();
+    private EquipoView equipoView;
     // planteles
     private ArrayList<Persona> plantelTecnico;
     private ArrayList<Persona> plantelMedico;
     private ArrayList<Persona> jugadores;
+
+   
 
     // registro de persona
     public void registroPersona(){

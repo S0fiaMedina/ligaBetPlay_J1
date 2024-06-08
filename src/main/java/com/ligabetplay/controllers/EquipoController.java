@@ -3,6 +3,8 @@ package com.ligabetplay.controllers;
 import java.util.ArrayList;
 import java.lang.Math;
 import com.ligabetplay.models.Equipo;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class EquipoController {
     // atributos
@@ -110,5 +112,28 @@ public class EquipoController {
         int sumaGoles = this.getSumaDeGoles();
         double promedioDeGoles = (double) sumaGoles / equipos.size(); 
         return Math.floor(promedioDeGoles);
+    }
+
+    /*--- GENERAR TABLA DE POSICIONES ---*/
+    public void generarTablaDePosiciones(ArrayList<Equipo> equipos){
+        Collections.sort(equipos, new Comparator<Equipo>() {
+            @Override
+            public int compare(Equipo equipo1, Equipo equipo2) {
+                // Primero comparamos los puntos
+                if (equipo1.getTotalPuntos() != equipo2.getTotalPuntos()) {
+                    return Integer.compare(equipo2.getTotalPuntos(), equipo1.getTotalPuntos());
+                }
+                
+                // Si los puntos son iguales, comparamos la diferencia de goles
+                int diferenciaGoles1 = equipo1.getDiferenciaDeGoles();
+                int diferenciaGoles2 = equipo2.getDiferenciaDeGoles();
+                if (diferenciaGoles1 != diferenciaGoles2) {
+                    return Integer.compare(diferenciaGoles2, diferenciaGoles1);
+                }
+                
+                // Si la diferencia de goles es igual, comparamos los goles a favor
+                return Integer.compare(equipo2.getGolesAFavor(), equipo1.getGolesAFavor());
+            }
+        });
     }
 }

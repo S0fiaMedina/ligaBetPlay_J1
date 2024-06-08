@@ -1,55 +1,72 @@
 package com.ligabetplay.views;
-
-import java.util.ArrayList;
-
 import com.ligabetplay.Utileria;
 
-
-
-
-
 public class Menu {
-    public ArrayList<String> opcionesMenuPrincipal = new ArrayList<>();
+    protected String[] opciones;
 
+    private String[] opcionesMenuPrincipal = {
+        "Equipos",
+        "Personas",
+        "Registrar partidos",
+        "Tabla de posiciones",
+        "Salir"
+    };
 
-    private int opcionSeleccionada;
+    private String[] opcionesMenuEquipo = {
+        "Registro de equipos",
+        "Equipo que más puntos tiene",
+        "Equipo que más goles anotó",
+        "Total de goles de todos los equipos",
+        "Promedio de goles anotados",
+        "Salir"
+    };
 
-    public Menu(){
-        opcionesMenuPrincipal.add("1. Registro de equipos");
-        opcionesMenuPrincipal.add("2. Registro de partidos");
-        opcionesMenuPrincipal.add("3. Equipo que más puntos tiene");
-        opcionesMenuPrincipal.add("4. Equipo que más goles anotó");
-        opcionesMenuPrincipal.add("5. Total de goles de todos los equipos");
-        opcionesMenuPrincipal.add("6. Promedio de goles anotados");
-        opcionesMenuPrincipal.add("7. Salir");
+    private String[] opcionesMenuPersona = {
+        "Registro de personas",
+        "Jugador que más goles anotó",
+        "Jugador que más tarjetas amarillas tiene",
+        "Jugador que mas tarjetas rojas tiene",
+        "Salir "
+    };
+
+    public Menu() {
+        
     }
 
-    //constructor sin argumentos (Menu principal)
-    public int mostrarMenuPrincipal(){
-        return  mostrarOpciones(opcionesMenuPrincipal);
+    // actualiza opciones
+    public void setOpciones(String[] nuevasOpciones) {
+        this.opciones = nuevasOpciones;
     }
 
-   
+    public void menuEquipo(){
+        this.setOpciones(opcionesMenuEquipo);
+    }
+
+    public void menuPersona(){
+        this.setOpciones(opcionesMenuPersona);
+    }
+
+    public void menuPrincipal(){
+        this.setOpciones(opcionesMenuPrincipal);
+    }
+
+
 
     // Mostrar las opciones y retornar la opción elegida
-    public int mostrarOpciones(ArrayList<String> opciones) {
-     
-      
-        // mostrar menu
-        for (String opcion : opciones) {
-            System.out.println(opcion);
-        }
-
-        // recibir opcion escogida
+    public int mostrarOpciones() {
+        Utileria.imprimirOpciones(opciones);
         System.out.println(">> Digite la opción de su preferencia: ");
-        int choice = Utileria.validarRango(1, opciones.size());
-
+        int choice = Utileria.validarRango(1, opciones.length);
+        if (choice == opciones.length){
+            this.salir();
+        }
         return choice;
-         
     }
 
-    public int getOpcionSeleccionada() {
-        return opcionSeleccionada;
+    //salir del menu
+    public int salir(){
+        return 0;
     }
+
 
 }

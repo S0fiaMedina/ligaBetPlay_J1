@@ -1,81 +1,55 @@
 package com.ligabetplay;
 
 import com.ligabetplay.views.Menu;
+import com.ligabetplay.views.PersonaView;
+import com.ligabetplay.views.EquipoView;
+import com.ligabetplay.views.PartidoView;
 
 public class Main {
+    
 
     public static void main(String[] args) {
-
-        //creacion de equipos
-        Liga liga = new Liga();
-
+        PersonaView personaView = new PersonaView();
+        EquipoView equipoView = new EquipoView();
+        PartidoView partidoView = new PartidoView();
         // crear menu y mostrar opciones
         Menu menu = new Menu();
+        
         boolean bandera = true;
 
 
         while (bandera){
             System.out.println("----------- LIGA BETPLAY -------------- ");
-            int opcionEscogida = menu.mostrarMenuPrincipal();
+            menu.menuPrincipal();
+            int opcionEscogida = menu.mostrarOpciones();
 
             // llamar a los procesos segun las respuestas
             switch(opcionEscogida){
-            
-                // registro de equipos
+                // Modulo equipos
                 case  1:
-                    liga.agregarEquipos();
+                    System.out.println("---------- EQUIPOS ---------");
+                    menu.menuEquipo();
+                    int opcionEquipo = menu.mostrarOpciones();
+                    equipoView.equipoHandler(opcionEquipo);
                 break;
-
-                // Registro de partidos
-                case  2:
-                    if (liga.getEquipos().size() > 0){
-                        liga.registrarPartidos();
-                    } else {
-                        System.out.println(">>Lo siento. Aun no se han registrado equipos");
-                    }
-                    
+                case 2:
+                System.out.println("---------- PERSONAS ---------"); // modeulo de personas y jugadores
+                    menu.menuPersona();
+                    int opcionPersona = menu.mostrarOpciones();
+                    personaView.personaHandler(opcionPersona);
                 break;
-
-                // Equipo que más puntos tiene
-                case  3:
-                    if (liga.getEquipos().size() > 0){
-                        liga.equipoConMasPuntos();
-                    } else {
-                        System.out.println(">>Lo siento. Aun no se han registrado equipos");
-                    }
+                case 3:
+                    partidoView.addPartido();
                 break;
-
-                // Equipo que más goles anotó
-                case  4:
-                    if (liga.getEquipos().size() > 0){
-                        liga.equipoConMasGoles();
-                    } else {
-                        System.out.println(">>Lo siento. Aun no se han registrado equipos");
-                    }
+                case 4:
+                    equipoView.mostrarTablaDePosiciones();
                 break;
-
-                // Total de goles de todos los equipos
-                case  5:
-                    if (liga.getEquipos().size() > 0){
-                        System.out.println("SUMA DE GOLES:" + liga.sumaDeGoles());
-                    } else {
-                        System.out.println(">>Lo siento. Aun no se han registrado equipos");
-                    }
-                break;
-
-                // Promedio de goles
-                case  6:
-                if (liga.getEquipos().size() > 0){
-                    liga.promedioGoles();
-                } else {
-                    System.out.println(">>Lo siento. Aun no se han registrado equipos");
-                }
-                break;
-
-                //Salir del ,menu
-                case 7:
+                default: 
                     bandera = false;
                 break;
+
+                // tabla de posiciones
+                // salir
 
             }
         

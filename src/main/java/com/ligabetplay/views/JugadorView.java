@@ -11,6 +11,8 @@ import java.util.Scanner;
 public class JugadorView {
     Scanner scanner = new Scanner(System.in);
     JugadorController jugadorController = new JugadorController();
+
+ 
     
     // seleccionar jugador
     public Jugador  getJugadorDeLista(Equipo equipo){

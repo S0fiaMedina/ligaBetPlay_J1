@@ -21,6 +21,7 @@ public class Equipo {
     private int golesAFavor;
     private int golesEnContra;
     private int totalPuntos;
+    private int diferenciaGoles;
 
 
     //Constructor
@@ -130,6 +131,10 @@ public class Equipo {
     public void setPartidosEmpatados(int partidosEmpatados) {
         this.partidosEmpatados = partidosEmpatados;
     }
+    public int getDiferenciaDeGoles(){
+        return this.golesAFavor - this.golesEnContra;
+    }
+    
     //toString
     @Override
     public String toString() {

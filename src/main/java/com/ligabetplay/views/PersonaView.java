@@ -1,16 +1,32 @@
 package com.ligabetplay.views;
 import com.ligabetplay.Utileria;
 import com.ligabetplay.controllers.PersonaController;
-import java.util.Scanner;
-
 
 
 public class PersonaView {
     String rolesEquipo[] = {"Medico", "Tecnico", "Jugador"};
     String rolesMedico[] = {"Medico", "Fisioterapeuta"};
     String rolesTecnico[] = {"Tecnico", "Asistente tecnico", "Preparador fisico"}; 
-    Scanner scanner = new Scanner(System.in);
     PersonaController personaController = new PersonaController();
+    JugadorView jugadorView = new JugadorView();
+
+    /*--- HANDLER GENERAL ---*/
+    public void personaHandler(int opcionEscogida){
+        switch (opcionEscogida) {
+            case 1: // registro de personas
+                this.mostrarMenuRegistroPersonas();
+                break;
+            case 2: // jugador con + goles
+                jugadorView.mostrarJugadorConMasGoles();
+                break;
+            case 3: // jugador  con + tarjetas amarillas
+                jugadorView.mostrarJugadorConMasTarjetasAmarillas();
+                break;
+            case 4: // jugador  con + tarjetas rojas
+                jugadorView.mostrarJugadorConMasTarjetasRojas();
+                break;
+        }
+    }
 
     //**--- MENU DE REGISTRO DE PERSONAS --- */
     public void mostrarMenuRegistroPersonas(){
@@ -25,16 +41,13 @@ public class PersonaView {
     }
     
     public String getInputNombre(){
-        return this.inputString("Ingrese el nombre: ");
+        return Utileria.getStringInput("Ingrese el nombre: ");
     }
 
     public String getInputNacionalidad(){
-        return this.inputString("Ingrese la  nacionalidad: ");
+        return Utileria.getStringInput("Ingrese la  nacionalidad: ");
     }
 
-    public String inputString(String mensaje) {
-        return this.scanner.nextLine();
-    }
 
     public String eleccionRolesEquipo(){
         return this.eleccionDeRoles("Escoge el rol de la persona", rolesEquipo);

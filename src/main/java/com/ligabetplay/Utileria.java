@@ -3,10 +3,26 @@ package com.ligabetplay;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
+import com.ligabetplay.models.Equipo;
+
 import java.util.regex.Matcher;
 
 public class Utileria {
-    
+    // metodo para imprimir informes
+    @SuppressWarnings("resource")
+    public static void mostrarInforme(String mensaje) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("************* RESULTADO *************");
+        System.out.println(mensaje);
+        System.out.println("*************************************\nPresiona Enter para continuar...");
+        scanner.nextLine();
+    }
+    // metodo para confirmaar
+    public static int confirmacion(String pregunta){
+        System.out.println(pregunta + "\n1. SI\n2. NO");
+        return Utileria.validarRango(1, 2);
+    }
 
     // recrea el input de python de string
     @SuppressWarnings("resource")

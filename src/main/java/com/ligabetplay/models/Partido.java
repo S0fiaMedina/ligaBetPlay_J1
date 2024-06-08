@@ -57,6 +57,10 @@ public class Partido {
         this.personasQueHicieronGoles = personasQueHicieronGoles;
     }
 
+    public void agregarGoleador(Jugador jugador){
+        this.personasQueHicieronGoles.add(jugador);
+    }
+
     public void setIdPartido(int idPartido) {
         this.idPartido = idPartido;
     }

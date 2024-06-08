@@ -41,19 +41,47 @@ public class PartidoController {
         }
 
         if (marcadorLocal != 0){
-            jugadorView.getJugadorDeLista(equipoLocal); // obtiene un jugador 
+            this.registrarGoleadores(equipoLocal, marcadorLocal);
         }
         if (marcadorVisitante != 0){
-            jugadorView.getJugadorDeLista(equipoVisitante); // obtiene un jugador
+            this.registrarGoleadores(equipoVisitante, marcadorVisitante); // obtiene un jugador
         }
 
         Partido partido = new Partido(equipoLocal, marcadorLocal, equipoVisitante, marcadorVisitante, fecha);
         partidos.add(partido);
     }
 
-    public ArrayList<Jugador> getGoleadores(){
-        // poner lista de jugadores de jugadores
+    public void registrarGoleadores(Equipo equipo, int marcadorLocal){
+        for (int i = 0; i < marcadorLocal; i++){
+            Jugador goleador = partidoView.getGoleadorPartido(equipo, i);
+            goleador.setGolesAnotados(goleador.getGolesAnotados() + 1);
+            System.out.println(goleador); // print de testeo
+        }
     }
+
+    public void añadirTarjetaRoja(Jugador jugador){
+        jugador.setTarjetasRojas(jugador.getTarjetasRojas() + 1);
+    }
+    public void añadirTarjetaAmarilla(Jugador jugador){
+        jugador.setTarjetasAmarillas(jugador.getTarjetasAmarillas() + 1);
+    }
+
+     // registra la tarjeta al jugador
+    public void registroDeTarjetaRoja(Equipo equipo, int numTarjetas){
+        for (int i = 0; i < numTarjetas; i++){
+            Jugador jugador = partidoView.getJugadorConSancion("roja", equipo, i);
+            this.añadirTarjetaRoja(jugador);
+        }
+    }
+    // registra tarjeta amarilla
+    public void registroDeTarjetaAmarilla(Equipo equipo, int numTarjetas){
+        for (int i = 0; i < numTarjetas; i++){
+            Jugador jugador = partidoView.getJugadorConSancion("amarilla", equipo, i);
+            this.añadirTarjetaAmarilla(jugador);
+        }
+    }
+
+   
 
 
 
