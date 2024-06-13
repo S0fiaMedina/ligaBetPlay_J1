@@ -1,6 +1,7 @@
 package com.ligabetplay.models;
 
 public class Persona {
+    private int id;
     private String nombre;
     private String nacionalidad;
     private String rol;
@@ -26,7 +27,9 @@ public class Persona {
         return nombre;
     }
 
-
+    public int getId(){
+        return this.id;
+    }
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -62,8 +65,11 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona [nombre=" + nombre + ", nacionalidad=" + nacionalidad + ", rol=" + rol + ", equipo=" + equipo
-                + "]";
+        StringBuilder sb = new StringBuilder();
+        sb.append(" Persona { id = '").append(this.id).append('\'');
+        sb.append(", nombre = '").append(this.nombre).append('\'');
+        sb.append(", rol = '").append(this.rol).append('\'').append('\'');
+        return sb.toString();
     }
 }
 

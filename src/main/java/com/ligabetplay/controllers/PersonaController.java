@@ -12,14 +12,42 @@ import java.util.ArrayList;
 
 public class PersonaController {
     private PersonaView personaView = new PersonaView();
+    private JugadorController jugadorController = new JugadorController();
     private EquipoView equipoView;
     // planteles
     private ArrayList<Persona> plantelTecnico;
     private ArrayList<Persona> plantelMedico;
     private ArrayList<Persona> jugadores;
 
-   
-
+   public void iniciarModuloPersona(){
+        int op = personaView.mostrarMenuRegistroPersonas();
+        personaHanddler(op); 
+   }
+    // tomar los datos aca, crear variables y luego enviar los datos a cada uno de los constructires
+    public void personaHanddler(int op){
+        while (true){
+            switch (op) {
+                case 1: // tecnico
+                    System.out.println("Escogiste medico");
+                    break;
+                case 2:
+                    System.out.println("Escogiste tecnico");
+                    break;
+                case 3: 
+                    System.out.println("Escogiste jugador");
+                    
+                    Persona persona = new Persona("Juan", "C", "Jdsa", equipo);
+                     
+                    // toca modificar a jugador 
+                    break;
+                default:
+                    break;
+            }
+            break;
+        }
+        
+    }
+    /* 
     // registro de persona
     public void registroPersona(){
         String nombre = personaView.getInputNombre();
@@ -47,7 +75,7 @@ public class PersonaController {
     // funcion de escaneo
 
     
-    
+    */
     
 
     

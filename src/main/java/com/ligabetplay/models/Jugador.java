@@ -10,12 +10,12 @@ public class Jugador  extends Persona{
     private int tarjetasAmarillas;
 
     // Constructor
-    public Jugador(String nombre, String nacionalidad, int dorsal, Equipo equipo){
-        super(nombre, nacionalidad, "Jugador",equipo );
-        Jugador.contadorJugadores++;
-        this.jugadorId = Jugador.contadorJugadores;
-        this.dorsal = dorsal;
-    }
+        public Jugador(String nombre, String nacionalidad, int dorsal, Equipo equipo){
+            super(nombre, nacionalidad, "Jugador",equipo );
+            Jugador.contadorJugadores++;
+            this.jugadorId = Jugador.contadorJugadores;
+            this.dorsal = dorsal;
+        }
 
     // getters y setters
     public int getDorsal() {

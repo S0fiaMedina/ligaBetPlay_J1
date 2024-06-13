@@ -4,13 +4,22 @@ import com.ligabetplay.controllers.PersonaController;
 
 
 public class PersonaView {
+    Menu menu = new Menu();
     String rolesEquipo[] = {"Medico", "Tecnico", "Jugador"};
     String rolesMedico[] = {"Medico", "Fisioterapeuta"};
     String rolesTecnico[] = {"Tecnico", "Asistente tecnico", "Preparador fisico"}; 
-    PersonaController personaController = new PersonaController();
     JugadorView jugadorView = new JugadorView();
 
-    /*--- HANDLER GENERAL ---*/
+        //**--- MENU DE REGISTRO DE PERSONAS --- */
+        public int mostrarMenuRegistroPersonas(){
+            System.out.println("--- NUEVA PERSONA ---\n Digite 0 si desea salir");
+            Utileria.imprimirOpciones(rolesEquipo);
+            int op = Utileria.validarRango(0, rolesEquipo.length);
+            return op;
+        }
+
+    /*
+    // HANDLER GENERAL 
     public void personaHandler(int opcionEscogida){
         switch (opcionEscogida) {
             case 1: // registro de personas
@@ -27,18 +36,10 @@ public class PersonaView {
                 break;
         }
     }
+     */
 
-    //**--- MENU DE REGISTRO DE PERSONAS --- */
-    public void mostrarMenuRegistroPersonas(){
-        String[] opcionesRegistro = {"Nueva persona", "Salir"};
-        Utileria.imprimirOpciones(opcionesRegistro);
-        int op = Utileria.validarRango(1, 2);
-        
-        // llamada a funciones
-        if (op == 1){
-            personaController.registroPersona();
-        }
-    }
+
+
     
     public String getInputNombre(){
         return Utileria.getStringInput("Ingrese el nombre: ");
@@ -49,9 +50,6 @@ public class PersonaView {
     }
 
 
-    public String eleccionRolesEquipo(){
-        return this.eleccionDeRoles("Escoge el rol de la persona", rolesEquipo);
-    }
 
     public String eleccionRolesMedico(){
         return this.eleccionDeRoles("Escoge el rol del medico", rolesMedico);
@@ -67,6 +65,5 @@ public class PersonaView {
         int opInt = Utileria.validarRango(1, opciones.length);
         return  opciones[opInt - 1];
     }
-
 
 }

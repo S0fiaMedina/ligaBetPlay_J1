@@ -12,14 +12,7 @@ public class Menu {
         "Salir"
     };
 
-    private String[] opcionesMenuEquipo = {
-        "Registro de equipos",
-        "Equipo que más puntos tiene",
-        "Equipo que más goles anotó",
-        "Total de goles de todos los equipos",
-        "Promedio de goles anotados",
-        "Salir"
-    };
+
 
     private String[] opcionesMenuPersona = {
         "Registro de personas",
@@ -36,18 +29,6 @@ public class Menu {
     // actualiza opciones
     public void setOpciones(String[] nuevasOpciones) {
         this.opciones = nuevasOpciones;
-    }
-
-    public void menuEquipo(){
-        this.setOpciones(opcionesMenuEquipo);
-    }
-
-    public void menuPersona(){
-        this.setOpciones(opcionesMenuPersona);
-    }
-
-    public void menuPrincipal(){
-        this.setOpciones(opcionesMenuPrincipal);
     }
 
 

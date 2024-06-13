@@ -1,37 +1,51 @@
 package com.ligabetplay.views;
 
 import com.ligabetplay.Utileria;
-import com.ligabetplay.controllers.EquipoController;
 import com.ligabetplay.models.Equipo;
-
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.List;
 
 public class EquipoView {
     Scanner scanner = new Scanner(System.in);
-    private EquipoController equipoController = new EquipoController();
-    private ArrayList<Equipo> equipos = equipoController.getEquipos();
+    private Menu menu = new Menu();
 
-    public void equipoHandler(int opcionEscogida){
-        switch (opcionEscogida) {
-            case 1: // registro de Equipos
-                this.registroDeEquipos();
-                break;
-            case 2: // Equipo con + puntos
-                this.mostrarEquipoConMasPuntos();
-                break;
-            case 3: // equipo con + goles
-                this.mostrarEquipoConMasGoles();
-                break;
-            case 4: // suma de goles
-                this.mostrarSumaGoles();
-                break;
-            case 5: // promedio de goles
-                this.mostrarPromedioGoles();
-                break;
-        }
+    private String[] opcionesMenuEquipo = {
+        "Registro de equipos",
+        "Equipo que más puntos tiene",
+        "Equipo que más goles anotó",
+        "Total de goles de todos los equipos",
+        "Promedio de goles anotados",
+        "Salir"
+    };
+
+
+    public int mostrarMenu(){
+        menu.setOpciones(opcionesMenuEquipo);
+        int opcionEscogida = menu.mostrarOpciones();
+        return opcionEscogida;
     }
+
+    public String registroDeEquipos(){
+        System.out.println("--- NUEVO EQUIPO ---\n>> Ingrese el nombre del equipo: \n Ingrese 0 para salir");
+        String nombre =  scanner.nextLine();
+        return nombre;
+    }
+
+    public int elegirEquipo(List<Equipo> equipos){
+        for (int i = 0; i < equipos.size(); i++){
+            System.out.println((i+1) + " " + equipos.get(i).getNombre());
+        }
+        return Utileria.validarRango(1, equipos.size());
+    }
+
+
+
+   
+    
+
+   /* 
     // Muestra la seleccion de equipos, y tras de que el usuario escoja, retorna el nombre del equipo escogido
     public Equipo  getEquipoDeLista(){
         this.mostrarListaDeEquipos();
@@ -70,20 +84,7 @@ public class EquipoView {
         Utileria.mostrarInforme("El promedio de goles es " + equipoController.getPromedioGoles());
     }
 
-    public void registroDeEquipos(){
-        String nombre = "";
-
-        while (true){
-            System.out.println("--- NUEVO EQUIPO ---\n>> Ingrese el nombre del equipo: ");
-            nombre =  scanner.nextLine();
-            if (nombre.equals("0")){
-                break;
-            }
-            equipoController.nuevoEquipo(nombre);
-        }
-        
-        
-    }
+    
 
 
     // Metodo general de impresion
@@ -96,4 +97,5 @@ public class EquipoView {
             System.out.println(equipo.getNombre() + " - Puntos: " + equipo.getTotalPuntos() + ", Diferencia de Goles: " + equipo.getDiferenciaDeGoles() + ", Goles a Favor: " + equipo.getGolesAFavor());
         }
     }
+        */
 }

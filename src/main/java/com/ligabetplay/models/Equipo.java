@@ -1,5 +1,6 @@
 package com.ligabetplay.models;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Equipo {
     
@@ -8,12 +9,7 @@ public class Equipo {
     private static int contadorEquipos;
 
     private  int idEquipo;
-
     private String nombre;
-    private ArrayList<Jugador> jugadores;
-    private ArrayList<Persona> cuerpoTecnico;
-    private ArrayList<Persona> cuerpoMedico;
-    
     private int partidosJugados;
     private int partidosGanados;
     private int partidosPerdidos;
@@ -21,7 +17,8 @@ public class Equipo {
     private int golesAFavor;
     private int golesEnContra;
     private int totalPuntos;
-    private int diferenciaGoles;
+
+
 
 
     //Constructor
@@ -52,98 +49,105 @@ public class Equipo {
 
     // GETTERS
 
+    
+    //toString
+   
+
+    public static int getContadorEquipos() {
+        return contadorEquipos;
+    }
+
+
+   
     public int getIdEquipo() {
         return idEquipo;
     }
 
+    public void setIdEquipo(int idEquipo) {
+        this.idEquipo = idEquipo;
+    }
 
     public String getNombre() {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     public int getPartidosJugados() {
         return partidosJugados;
     }
 
+    public void setPartidosJugados(int partidosJugados) {
+        this.partidosJugados = partidosJugados;
+    }
 
     public int getPartidosGanados() {
         return partidosGanados;
     }
 
+    public void setPartidosGanados(int partidosGanados) {
+        this.partidosGanados = partidosGanados;
+    }
 
     public int getPartidosPerdidos() {
         return partidosPerdidos;
     }
 
+    public void setPartidosPerdidos(int partidosPerdidos) {
+        this.partidosPerdidos = partidosPerdidos;
+    }
 
     public int getPartidosEmpatados() {
         return partidosEmpatados;
     }
 
+    public void setPartidosEmpatados(int partidosEmpatados) {
+        this.partidosEmpatados = partidosEmpatados;
+    }
 
     public int getGolesAFavor() {
         return golesAFavor;
     }
 
+    public void setGolesAFavor(int golesAFavor) {
+        this.golesAFavor = golesAFavor;
+    }
 
     public int getGolesEnContra() {
         return golesEnContra;
-    }
-
-
-    public int getTotalPuntos() {
-        return totalPuntos;
-    }
-    public ArrayList<Jugador> getJugadores(){
-        return this.jugadores;
-    }
-
-    // SETTERS
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    
-
-    public void setGolesAFavor(int golesAFavor) {
-        this.golesAFavor = golesAFavor;
     }
 
     public void setGolesEnContra(int golesEnContra) {
         this.golesEnContra = golesEnContra;
     }
 
+    public int getTotalPuntos() {
+        return totalPuntos;
+    }
+
     public void setTotalPuntos(int totalPuntos) {
         this.totalPuntos = totalPuntos;
     }
 
-    public void setPartidosJugados(int partidosJugados) {
-        this.partidosJugados = partidosJugados;
-    }
-    public void setPartidosGanados(int partidosGanados) {
-        this.partidosGanados = partidosGanados;
-    }
-    public void setPartidosPerdidos(int partidosPerdidos) {
-        this.partidosPerdidos = partidosPerdidos;
-    }
-    public void setPartidosEmpatados(int partidosEmpatados) {
-        this.partidosEmpatados = partidosEmpatados;
-    }
-    public int getDiferenciaDeGoles(){
+    public int getDiferenciaGoles() {
         return this.golesAFavor - this.golesEnContra;
     }
-    
-    //toString
+
     @Override
     public String toString() {
-        return "Equipo [ idEquipo= " + idEquipo + ", nombre= " + nombre + ", partidosJugados= " + partidosJugados
-                + ", partidosGanados=" + partidosGanados + ", partidosPerdidos=" + partidosPerdidos
-                + ", partidosEmpatados=" + partidosEmpatados + ", golesAFavor=" + golesAFavor + ", golesEnContra="
-                + golesEnContra + ", totalPuntos=" + totalPuntos + "]";
+        StringBuilder sb = new StringBuilder();
+        sb.append(" Equipo { id = '").append(this.idEquipo).append('\'');
+        sb.append(", nombre = '").append(this.nombre).append('\'');
+        sb.append(", partidos jugados = '").append(this.partidosJugados).append('\'');
+        sb.append(", partidos ganados = '").append(this.partidosGanados).append('\'');
+        sb.append(", partidos perdidos = '").append(this.partidosPerdidos).append('\'');
+        sb.append(", partidos empatados = '").append(this.partidosGanados).append('\'');
+        sb.append(", goles a favor = '").append(this.golesAFavor).append('\'');
+        sb.append(", goles en contra = '").append(this.golesEnContra).append('\'');
+        sb.append(", suma de puntos = '").append(this.totalPuntos).append('\'');
+        return sb.toString();
     }
-
-    
     
 }

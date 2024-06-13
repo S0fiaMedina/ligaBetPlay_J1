@@ -2,18 +2,70 @@ package com.ligabetplay.controllers;
 
 import java.util.ArrayList;
 import java.lang.Math;
+
+
+import com.ligabetplay.dao.EquipoDAOImplement;
 import com.ligabetplay.models.Equipo;
+import com.ligabetplay.views.EquipoView;
+
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class EquipoController {
     // atributos
-    private ArrayList<Equipo> equipos;
+    private EquipoView equipoView = new EquipoView();
+    private EquipoDAOImplement equipoDAOImplement = new EquipoDAOImplement();
+    private List<Equipo> equipos;
 
-    //get de equipos
-    public ArrayList<Equipo> getEquipos(){
-        return this.equipos;
-    }   
+    public EquipoController(){
+        this.equipos = equipoDAOImplement.cargarEquipos();
+    }
+
+    // llama a la vista para ser mostrada al usuario
+    public void iniciarModuloEquipo(){
+        int opcionEscogida =equipoView.mostrarMenu();
+        equipoHandler(opcionEscogida);
+
+    }
+    
+      
+    // maneja la respuesta de la vista
+    public void equipoHandler(int opcionEscogida){
+        switch (opcionEscogida) {
+            case 1: // registro de Equipos
+                this.nuevoEquipo();
+                break;
+            /* 
+            case 2: // Equipo con + puntos
+                this.mostrarEquipoConMasPuntos();
+                break;
+            case 3: // equipo con + goles
+                this.mostrarEquipoConMasGoles();
+                break;
+            case 4: // suma de goles
+                this.mostrarSumaGoles();
+                break;
+            case 5: // promedio de goles
+                this.mostrarPromedioGoles();
+                break;
+            */
+        }
+    }
+
+    /*REGISTRO DE EQUIPOS*/
+    public void nuevoEquipo(){
+        while(true){
+            String nombre = equipoView.registroDeEquipos();
+            if (nombre.equals("0")){
+                break;
+            }
+            Equipo equipo = new Equipo(nombre);
+            equipoDAOImplement.agregarEquipo(equipo);
+        }
+        equipoDAOImplement.guardarEquipos();
+    }
+
 
     /*---- FUNCION DE CUANDO EL QUIPO JUEGA**/
     public void equipoJuega(Equipo equipo, int puntosObtenidos, int golesAnotados, int golesRecibidos){
@@ -115,6 +167,7 @@ public class EquipoController {
     }
 
     /*--- GENERAR TABLA DE POSICIONES ---*/
+    /* 
     public void generarTablaDePosiciones(ArrayList<Equipo> equipos){
         Collections.sort(equipos, new Comparator<Equipo>() {
             @Override
@@ -136,4 +189,5 @@ public class EquipoController {
             }
         });
     }
+        */
 }
