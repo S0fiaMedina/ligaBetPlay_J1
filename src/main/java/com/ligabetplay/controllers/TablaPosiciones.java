@@ -1,5 +1,5 @@
 package com.ligabetplay.controllers;
-import com.ligabetplay.models.Equipo;
+import com.ligabetplay.team.Equipo;
 
 public class TablaPosiciones {
     

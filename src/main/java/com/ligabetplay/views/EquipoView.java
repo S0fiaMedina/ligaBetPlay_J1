@@ -1,7 +1,7 @@
 package com.ligabetplay.views;
 
 import com.ligabetplay.Utileria;
-import com.ligabetplay.models.Equipo;
+import com.ligabetplay.team.Equipo;
 
 import java.util.Scanner;
 import java.util.ArrayList;

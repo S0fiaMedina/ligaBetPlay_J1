@@ -3,8 +3,8 @@ package com.ligabetplay.views;
 
 
 import com.ligabetplay.Utileria;
-import com.ligabetplay.models.Equipo;
 import com.ligabetplay.models.Jugador;
+import com.ligabetplay.team.Equipo;
 import com.ligabetplay.controllers.PartidoController;
 
 public class PartidoView {

@@ -1,5 +1,7 @@
 package com.ligabetplay.models;
 
+import com.ligabetplay.team.Equipo;
+
 public class Tecnico extends Persona{
     private String rol;
 

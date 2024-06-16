@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 
 import com.ligabetplay.Utileria;
-import com.ligabetplay.models.Equipo;
 import com.ligabetplay.models.Partido;
+import com.ligabetplay.team.Equipo;
 import com.ligabetplay.models.Jugador;
 import com.ligabetplay.views.PartidoView;
 import com.ligabetplay.views.JugadorView;

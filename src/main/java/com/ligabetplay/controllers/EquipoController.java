@@ -5,7 +5,7 @@ import java.lang.Math;
 
 
 import com.ligabetplay.dao.EquipoDAOImplement;
-import com.ligabetplay.models.Equipo;
+import com.ligabetplay.team.Equipo;
 import com.ligabetplay.views.EquipoView;
 
 import java.util.Collections;

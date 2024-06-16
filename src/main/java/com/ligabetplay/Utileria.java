@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-import com.ligabetplay.models.Equipo;
+
 
 import java.util.regex.Matcher;
 
@@ -46,8 +46,16 @@ public class Utileria {
         }
     }
 
-    // validar que la entrada del usuario sea un numero y este dentro de ciertos
-    // rangos
+    
+/**
+ * Método estático para validar y obtener un número dentro de un rango específico.
+ * Permite al usuario introducir un número por consola y verifica que esté dentro
+ * del rango especificado.
+ *
+ * @param numMinimo Valor mínimo del rango (inclusive).
+ * @param numMaximo Valor máximo del rango (inclusive).
+ * @return El número validado que se encuentra dentro del rango especificado.
+ */
     public static int validarRango(int numMinimo, int numMaximo) {
         @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
@@ -55,7 +63,6 @@ public class Utileria {
         int numero;
         do {
             try {
-                System.out.print(" >> Ingrese un número entre " + numMinimo + " y " + numMaximo + ": ");
                 numero = sc.nextInt();
 
                 if (numero >= numMinimo && numero <= numMaximo) {

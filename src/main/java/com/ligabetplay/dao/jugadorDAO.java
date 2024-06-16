@@ -2,8 +2,8 @@ package com.ligabetplay.dao;
 
 import java.util.List;
 
-import com.ligabetplay.models.Equipo;
 import com.ligabetplay.models.Jugador;
+import com.ligabetplay.team.Equipo;
 
 public interface jugadorDAO {
 

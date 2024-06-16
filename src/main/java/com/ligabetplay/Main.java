@@ -1,17 +1,15 @@
 package com.ligabetplay;
 
-import com.ligabetplay.views.Menu;
-import com.ligabetplay.views.PersonaView;
-import com.ligabetplay.views.EquipoView;
-import com.ligabetplay.views.PartidoView;
+import com.ligabetplay.team.infrastructure.inbound.controller.TeamController;
 
 public class Main {
     
 
     public static void main(String[] args) {
-        PersonaView personaView = new PersonaView();
-        EquipoView equipoView = new EquipoView();
-        PartidoView partidoView = new PartidoView();
+    TeamController teamController = new TeamController();
+    teamController.run();
+    
+    /* 
         // crear menu y mostrar opciones
         Menu menu = new Menu();
         
@@ -55,7 +53,8 @@ public class Main {
         
     
         }
-        
+        */
     }
+        
 
 }

@@ -1,5 +1,7 @@
 package com.ligabetplay.models;
 
+import com.ligabetplay.team.Equipo;
+
 public class Jugador  extends Persona{
     // Atributos
     private static int contadorJugadores;

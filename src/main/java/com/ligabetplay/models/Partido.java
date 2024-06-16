@@ -2,6 +2,8 @@ package com.ligabetplay.models;
 
 import java.util.ArrayList;
 
+import com.ligabetplay.team.Equipo;
+
 public class Partido {
     
     private static int contadorPartidos;

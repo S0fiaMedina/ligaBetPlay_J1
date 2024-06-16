@@ -2,8 +2,8 @@ package com.ligabetplay.controllers;
 import com.ligabetplay.models.Jugador;
 import com.ligabetplay.models.Persona;
 import com.ligabetplay.models.Tecnico;
+import com.ligabetplay.team.Equipo;
 import com.ligabetplay.models.Medico;
-import com.ligabetplay.models.Equipo;
 import com.ligabetplay.views.EquipoView;
 import com.ligabetplay.views.PersonaView;
 
