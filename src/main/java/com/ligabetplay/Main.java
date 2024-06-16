@@ -1,13 +1,14 @@
 package com.ligabetplay;
 
 import com.ligabetplay.team.infrastructure.inbound.controller.TeamController;
+import com.ligabetplay.teamMember.infrastructure.inbound.controller.TeamMemberController;
 
 public class Main {
     
 
     public static void main(String[] args) {
-    TeamController teamController = new TeamController();
-    teamController.run();
+        TeamMemberController teamMemberController = new TeamMemberController();
+    teamMemberController.run();
     
     /* 
         // crear menu y mostrar opciones

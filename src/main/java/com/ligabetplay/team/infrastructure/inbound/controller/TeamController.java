@@ -20,6 +20,8 @@ public class TeamController {
             if (option == 1){
                 TeamDTO teamDTO = teamView.getNewTeam();
                 teamService.newTeam(teamDTO);
+            } else{
+                break;
             }
 
         }

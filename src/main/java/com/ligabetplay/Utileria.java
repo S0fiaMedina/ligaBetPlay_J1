@@ -68,10 +68,10 @@ public class Utileria {
                 if (numero >= numMinimo && numero <= numMaximo) {
                     return numero;
                 } else {
-                    System.out.println("Error: El número debe estar dentro del rango especificado.");
+                    System.out.println("Error: El número debe estar dentro del rango especificado.\nIngresa un numero: ");
                 }
             } catch (Exception e) {
-                System.out.println("Error: Debes introducir un número entero.");
+                System.out.println("Error: Debes introducir un número entero.\nIngresa un numero: ");
                 sc.next();
             }
         } while (true);
